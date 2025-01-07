@@ -14,4 +14,9 @@ public class Player
         Position = position;
         Score = score;
     }
+
+    public void UpdateScore(int upd)
+    {
+        Score += upd;
+    }
 }
