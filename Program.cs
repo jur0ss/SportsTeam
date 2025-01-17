@@ -8,7 +8,7 @@ internal class Program
     {
         string Name { get; }
         string Position { get; }
-        int Score { get; }
+        int Score { get; set; }
     }
 
     public class Player : PlayerInterface
@@ -22,11 +22,6 @@ internal class Program
             Name = name;
             Position = position;
             Score = score;
-        }
-
-        public void UpdateScore(int upd)
-        {
-            Score += upd;
         }
     }
 
@@ -58,6 +53,20 @@ internal class Program
         {
             return Players.Average(p => p.Score);
         }
+        
+        public void UpdateScore(string playerName, int upd)
+        {
+            var player = Players.FirstOrDefault(p => p.Name == playerName);
+            if (player != null) 
+            {
+                player.Score += upd; 
+                Console.WriteLine($"Zaktualizowano wynik zawodnika {playerName}. Nowy wynik: {player.Score}");
+            }
+            else
+            {
+                Console.WriteLine($"Zawodnik o imieniu {playerName} nie został znaleziony");
+            }
+        }
     }
 
     static void Main(string[] args)
@@ -72,5 +81,8 @@ internal class Program
 
         double average = team.AverageScore();
         Console.WriteLine($"Średnia zdobytych punktów w drużynie {average}");
+        
+        team.UpdateScore("Adam Nowak", 6);
+        
     }
 }
