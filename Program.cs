@@ -45,5 +45,13 @@ internal class Program
             Players.Remove(player);
             Console.WriteLine($"Z drużyny został usunięty zawodnik: {player.Name}");
         }
+
+        public void ShowStats()
+        {
+            foreach (var player in Players)
+            {
+                Console.WriteLine($"Zawodnik: {player.Name}, Pozycja {player.Position}, Punkty {player.Score}");
+            }
+        }
     }
 }
