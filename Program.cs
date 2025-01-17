@@ -39,5 +39,11 @@ internal class Program
             Players.Add(player);
             Console.WriteLine($"Dodano zawodnika: {player.Name}");
         }
+
+        public void RemovePlayer(PlayerInterface player)
+        {
+            Players.Remove(player);
+            Console.WriteLine($"Z drużyny został usunięty zawodnik: {player.Name}");
+        }
     }
 }
