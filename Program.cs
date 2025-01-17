@@ -67,5 +67,10 @@ internal class Program
         team.AddPlayer(new Player("Jan Kowalski", "Obrońca", 12));
         team.AddPlayer(new Player("Adam Nowak", "Napastnik", 25));
         team.AddPlayer(new Player("Tomasz Zieliński", "Pomocnik", 18));
+        
+        team.ShowStats();
+
+        double average = team.AverageScore();
+        Console.WriteLine($"Średnia zdobytych punktów w drużynie {average}");
     }
 }
