@@ -2,21 +2,31 @@
 
 using System;
 
-public class Player
+internal class Program
 {
-    public string Name { get; set; }
-    public string Position { get; set; }
-    public int Score { get; set; }
-    
-    public Player(string name, string position, int score)
+    public interface PlayerInterface
     {
-        Name = name;
-        Position = position;
-        Score = score;
+        string Name { get; }
+        string Position { get; }
+        int Score { get; }
     }
 
-    public void UpdateScore(int upd)
+    public class Player : PlayerInterface
     {
-        Score += upd;
+        public string Name { get; set; }
+        public string Position { get; set; }
+        public int Score { get; set; }
+
+        public Player(string name, string position, int score)
+        {
+            Name = name;
+            Position = position;
+            Score = score;
+        }
+
+        public void UpdateScore(int upd)
+        {
+            Score += upd;
+        }
     }
 }
