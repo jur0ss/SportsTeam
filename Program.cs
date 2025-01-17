@@ -53,5 +53,19 @@ internal class Program
                 Console.WriteLine($"Zawodnik: {player.Name}, Pozycja {player.Position}, Punkty {player.Score}");
             }
         }
+
+        public double AverageScore()
+        {
+            return Players.Average(p => p.Score);
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        Team team = new();
+        
+        team.AddPlayer(new Player("Jan Kowalski", "Obrońca", 12));
+        team.AddPlayer(new Player("Adam Nowak", "Napastnik", 25));
+        team.AddPlayer(new Player("Tomasz Zieliński", "Pomocnik", 18));
     }
 }
