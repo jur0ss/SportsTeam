@@ -29,4 +29,15 @@ internal class Program
             Score += upd;
         }
     }
+
+    public class Team
+    {
+        public List<PlayerInterface> Players = new List<PlayerInterface>();
+
+        public void AddPlayer(PlayerInterface player)
+        {
+            Players.Add(player);
+            Console.WriteLine($"Dodano zawodnika: {player.Name}");
+        }
+    }
 }
